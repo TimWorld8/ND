@@ -46,6 +46,8 @@ public class ND {
        public static void main(String args[]) {
         /* Set the Nimbus look and feel */
      //   connectDB();
+     
+     System.out.println("Hello world by wut");
         Connection con = connectDB();
         
         try {
