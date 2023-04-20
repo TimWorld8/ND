@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package nd;///Bird ddds adsfgsdfgdfsg   TimWorld
-=======
-package nd;///Bird ddds adsfgsdfgdfsg โหล โหล เทส
->>>>>>> 84b18b0cc80a6bd73050102555d3310f0bb9b2ee
-
 import java.awt.Frame;
 import java.sql.Connection;
 import java.sql.DriverManager;
