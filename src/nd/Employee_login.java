@@ -87,6 +87,11 @@ public class Employee_login extends javax.swing.JFrame {
         });
 
         lbresetpw.setText("reset password");
+        lbresetpw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbresetpwMouseClicked(evt);
+            }
+        });
 
         lbregister.setText("register");
 
@@ -157,7 +162,7 @@ public class Employee_login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(118, 118, 118)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,6 +210,10 @@ public class Employee_login extends javax.swing.JFrame {
             Logger.getLogger(Employee_login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btloginActionPerformed
+
+    private void lbresetpwMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbresetpwMouseClicked
+new Reset_password().setVisible(true);
+    }//GEN-LAST:event_lbresetpwMouseClicked
 
     /**
      * @param args the command line arguments
