@@ -223,28 +223,26 @@ int ck =0;
     private void btok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btok1ActionPerformed
 if(ck==0){
     Connection con = connectDB();
-    PreparedStatement pst;
-      try {      
-            pst = con.prepareStatement("UPDATE staff SET staff_pw=? WHERE staff_id=? ");
-            String username = passja1.getText();
-            String password = tfusername.getText();
-            pst.setString(1, username);
-            pst.setString(2, password);
-            ResultSet rs1 = pst.executeQuery();
-            if(rs1.next()==false)
-                {
-                    JOptionPane.showMessageDialog(this, "Sorry Record Not Found");
-                    passja1.setText("");               
-                }
-            else
-                {
-                    JOptionPane.showMessageDialog(this, "OK");
-                     setVisible(false);
-                }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Reset_password.class.getName()).log(Level.SEVERE, null, ex);
-        }
+PreparedStatement pst;
+try {
+    pst = con.prepareStatement("UPDATE staff SET staff_pw=? WHERE staff_id=? ");
+    String username = passja1.getText();
+    String password = tfusername.getText();
+    pst.setString(1, username);
+    pst.setString(2, password);
+    int affectedRows = pst.executeUpdate();
+    if (affectedRows == 0) {
+        JOptionPane.showMessageDialog(this, "Sorry, Record Not Found");
+        passja1.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "OK");
+        setVisible(false);
+    }
+
+} catch (SQLException ex) {
+    Logger.getLogger(Reset_password.class.getName()).log(Level.SEVERE, null, ex);
+}
+
 }
 else{
     JOptionPane.showMessageDialog(this, "CK >0");
