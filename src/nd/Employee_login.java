@@ -94,6 +94,11 @@ public class Employee_login extends javax.swing.JFrame {
         });
 
         lbregister.setText("register");
+        lbregister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbregisterMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,6 +219,10 @@ public class Employee_login extends javax.swing.JFrame {
     private void lbresetpwMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbresetpwMouseClicked
 new Reset_password().setVisible(true);
     }//GEN-LAST:event_lbresetpwMouseClicked
+
+    private void lbregisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbregisterMouseClicked
+        
+    }//GEN-LAST:event_lbregisterMouseClicked
 
     /**
      * @param args the command line arguments
