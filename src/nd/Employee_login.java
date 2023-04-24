@@ -51,6 +51,7 @@ public class Employee_login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(215, 222, 186));
         setForeground(new java.awt.Color(215, 222, 186));
+        setResizable(false);
 
         jPanel1.setForeground(new java.awt.Color(215, 222, 186));
 
@@ -185,6 +186,7 @@ public class Employee_login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfpasswordActionPerformed
