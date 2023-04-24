@@ -5,11 +5,7 @@
  */
 package nd;
 //Gui part
-import java.text.AttributedCharacterIterator;
-import static java.time.zone.ZoneRulesProvider.refresh;
-import javax.swing.Timer;
-import javax.swing.UIManager;
-//database part
+
 import java.sql.*;
 
 /**
@@ -72,10 +68,10 @@ public class inputMain extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jTextField7 = new javax.swing.JTextField();
+        jTextDate2 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        jTextDate3 = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jComboBox10 = new javax.swing.JComboBox<>();
@@ -171,7 +167,14 @@ public class inputMain extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
+        dateChooser1.setForeground(new java.awt.Color(195, 195, 247));
         dateChooser1.setTextRefernce(jTextDate1);
+
+        dateChooser2.setForeground(new java.awt.Color(195, 195, 247));
+        dateChooser2.setTextRefernce(jTextDate2);
+
+        dateChooser3.setForeground(new java.awt.Color(195, 195, 247));
+        dateChooser3.setTextRefernce(jTextDate3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -214,10 +217,10 @@ public class inputMain extends javax.swing.JFrame {
         jLabel3.setText("นามสกุล");
 
         jTextField2.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jTextField2InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -352,9 +355,9 @@ public class inputMain extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jTextDate2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jTextDate2ActionPerformed(evt);
             }
         });
 
@@ -368,10 +371,10 @@ public class inputMain extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel31.setText("วัน/เดือน/ปี เกิด ไทย");
 
-        jTextField8.setPreferredSize(new java.awt.Dimension(72, 22));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        jTextDate3.setPreferredSize(new java.awt.Dimension(72, 22));
+        jTextDate3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                jTextDate3ActionPerformed(evt);
             }
         });
 
@@ -445,7 +448,7 @@ public class inputMain extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -458,7 +461,7 @@ public class inputMain extends javax.swing.JFrame {
                             .addGroup(Part1Layout.createSequentialGroup()
                                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextDate3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
@@ -495,7 +498,7 @@ public class inputMain extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7)
                     .addComponent(jLabel33)
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -515,7 +518,7 @@ public class inputMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDate3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8)
                     .addComponent(jLabel35)
                     .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1261,9 +1264,9 @@ public class inputMain extends javax.swing.JFrame {
         dateChooser1.showPopup();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextDate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDate2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextDate2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         dateChooser2.showPopup();
@@ -1288,9 +1291,9 @@ public class inputMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jTextDate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDate3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_jTextDate3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         dateChooser3.showPopup();
@@ -1486,6 +1489,8 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextDate1;
+    private javax.swing.JTextField jTextDate2;
+    private javax.swing.JTextField jTextDate3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -1513,8 +1518,6 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     public javax.swing.JLabel kuy;
     // End of variables declaration//GEN-END:variables

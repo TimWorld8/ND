@@ -5,8 +5,8 @@
  */
 package nd;
 
-import static database_test.submain.text;
 
+import java.sql.*;
 /**
  *
  * @author ohkoo
@@ -37,6 +37,9 @@ public class reEnterMain extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        dateChooser1 = new com.raven.datechooser.DateChooser();
+        dateChooser2 = new com.raven.datechooser.DateChooser();
+        dateChooser3 = new com.raven.datechooser.DateChooser();
         jButton1 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -66,10 +69,10 @@ public class reEnterMain extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jTextField7 = new javax.swing.JTextField();
+        jTextDate2 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        jTextDate3 = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -164,6 +167,14 @@ public class reEnterMain extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        dateChooser1.setForeground(new java.awt.Color(195, 195, 247));
+
+        dateChooser2.setForeground(new java.awt.Color(195, 195, 247));
+        dateChooser2.setTextRefernce(jTextDate2);
+
+        dateChooser3.setForeground(new java.awt.Color(195, 195, 247));
+        dateChooser3.setTextRefernce(jTextDate3);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(1288, 640));
@@ -214,10 +225,10 @@ public class reEnterMain extends javax.swing.JFrame {
         jLabel3.setText("นามสกุล");
 
         jTextField2.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jTextField2InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -348,9 +359,9 @@ public class reEnterMain extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jTextDate2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jTextDate2ActionPerformed(evt);
             }
         });
 
@@ -364,10 +375,10 @@ public class reEnterMain extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel31.setText("วัน/เดือน/ปี เกิด ไทย");
 
-        jTextField8.setPreferredSize(new java.awt.Dimension(72, 22));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        jTextDate3.setPreferredSize(new java.awt.Dimension(72, 22));
+        jTextDate3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                jTextDate3ActionPerformed(evt);
             }
         });
 
@@ -436,7 +447,7 @@ public class reEnterMain extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -449,7 +460,7 @@ public class reEnterMain extends javax.swing.JFrame {
                             .addGroup(Part1Layout.createSequentialGroup()
                                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextDate3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
@@ -486,7 +497,7 @@ public class reEnterMain extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7)
                     .addComponent(jLabel33)
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -506,7 +517,7 @@ public class reEnterMain extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDate3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8)
                     .addComponent(jLabel35)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -755,7 +766,7 @@ public class reEnterMain extends javax.swing.JFrame {
         );
 
         Jtabbed1.add(Part3);
-        Part3.setBounds(0, 250, 1260, 0);
+        Part3.setBounds(0, 250, 1260, 86);
 
         jTextField26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -843,7 +854,7 @@ public class reEnterMain extends javax.swing.JFrame {
         );
 
         Jtabbed1.add(Part4);
-        Part4.setBounds(0, 340, 1260, 0);
+        Part4.setBounds(0, 340, 1260, 83);
 
         jTabbedPane1.addTab("ข้อมูลทั่วไป", Jtabbed1);
 
@@ -1206,17 +1217,17 @@ public class reEnterMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextDate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDate2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextDate2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         dateChooser2.showPopup();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jTextDate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDate3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_jTextDate3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         dateChooser3.showPopup();
@@ -1355,6 +1366,9 @@ public class reEnterMain extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPanel buttonPanel;
+    private com.raven.datechooser.DateChooser dateChooser1;
+    private com.raven.datechooser.DateChooser dateChooser2;
+    private com.raven.datechooser.DateChooser dateChooser3;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1442,6 +1456,8 @@ public class reEnterMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextDate1;
+    private javax.swing.JTextField jTextDate2;
+    private javax.swing.JTextField jTextDate3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -1470,8 +1486,6 @@ public class reEnterMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
