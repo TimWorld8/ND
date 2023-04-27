@@ -50,15 +50,15 @@ public class inputMain extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         headerPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        p_pre_name = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        p_lname = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        kuy = new javax.swing.JLabel();
+        HN = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        date = new com.toedter.calendar.JDateChooser();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Jtabbed1 = new javax.swing.JPanel();
         Part1 = new javax.swing.JPanel();
@@ -83,9 +83,9 @@ public class inputMain extends javax.swing.JFrame {
         p_gender = new javax.swing.JRadioButton();
         jRadioButton12 = new javax.swing.JRadioButton();
         p_religion = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        t_day1 = new javax.swing.JComboBox<>();
         t_birth_date = new javax.swing.JComboBox<>();
-        jTextField7 = new javax.swing.JTextField();
+        t_day2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -195,13 +195,13 @@ public class inputMain extends javax.swing.JFrame {
         jLabel5.setText("คำนำหน้าชื่อ");
         headerPanel.add(jLabel5);
 
-        jComboBox1.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        p_pre_name.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
+        p_pre_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                p_pre_nameActionPerformed(evt);
             }
         });
-        headerPanel.add(jComboBox1);
+        headerPanel.add(p_pre_name);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,25 +215,25 @@ public class inputMain extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel3.setText("นามสกุล");
 
-        jTextField2.addInputMethodListener(new java.awt.event.InputMethodListener() {
+        p_lname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p_lnameActionPerformed(evt);
+            }
+        });
+        p_lname.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                jTextField2InputMethodTextChanged(evt);
-            }
-        });
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                p_lnameInputMethodTextChanged(evt);
             }
         });
 
         jLabel32.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel32.setText("วันที่ :");
 
-        kuy.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        kuy.setForeground(new java.awt.Color(153, 153, 153));
-        kuy.setText("##00001");
+        HN.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        HN.setForeground(new java.awt.Color(153, 153, 153));
+        HN.setText("##00001");
 
         jLabel7.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel7.setText("เลขHN");
@@ -252,7 +252,7 @@ public class inputMain extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addComponent(kuy)))
+                        .addComponent(HN)))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -260,12 +260,12 @@ public class inputMain extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addComponent(jLabel3)
                         .addGap(25, 25, 25)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(p_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -276,11 +276,11 @@ public class inputMain extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kuy, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(HN, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(20, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -289,7 +289,7 @@ public class inputMain extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(jLabel3)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(p_lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -396,15 +396,11 @@ public class inputMain extends javax.swing.JFrame {
 
         p_religion.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        t_day1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขึ้น", "แรม" }));
 
-        t_birth_date.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        t_birth_date.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์", "วันอาทิตย์" }));
 
-        jTextField7.setText("jTextField7");
-
-        jLabel6.setText("jLabel6");
-
-        jTextField8.setText("jTextField8");
+        jLabel6.setText("เดือน");
 
         jLabel8.setText("jLabel8");
 
@@ -431,51 +427,47 @@ public class inputMain extends javax.swing.JFrame {
                         .addComponent(job)
                         .addGap(431, 431, 431))
                     .addGroup(Part1Layout.createSequentialGroup()
-                        .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Part1Layout.createSequentialGroup()
-                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t_birth_date, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Part1Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(p_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Part1Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(p_nation, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(p_religion, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(579, 579, 579))
-                            .addGroup(Part1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(467, 467, 467))))))
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(t_birth_date, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(t_day1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(t_day2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(467, 467, 467))
+                    .addGroup(Part1Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(p_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(p_nation, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(p_religion, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(632, 632, 632))))
         );
         Part1Layout.setVerticalGroup(
             Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,13 +501,13 @@ public class inputMain extends javax.swing.JFrame {
                     .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel45)
                     .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_day1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t_birth_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7)
                     .addComponent(jLabel6)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_day2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -1185,13 +1177,13 @@ public class inputMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void p_pre_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_pre_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_p_pre_nameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void p_lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_lnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_p_lnameActionPerformed
 
     private void id_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_numActionPerformed
         // TODO add your handling code here:
@@ -1262,9 +1254,9 @@ public class inputMain extends javax.swing.JFrame {
         new Menu().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTextField2InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextField2InputMethodTextChanged
+    private void p_lnameInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_p_lnameInputMethodTextChanged
         
-    }//GEN-LAST:event_jTextField2InputMethodTextChanged
+    }//GEN-LAST:event_p_lnameInputMethodTextChanged
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //        System.out.print(jTextDate1.getText());\
@@ -1289,14 +1281,79 @@ public class inputMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox10ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Connection con = connectDB();
+    Connection con = connectDB();
     PreparedStatement pst;
       try {      
             pst = con.prepareStatement("select staff_id,staff_pw from staff where staff_id=? and staff_pw=?");
-            String username = tfusername.getText();
-            String password = tfpassword.getText();
-            pst.setString(1, username);
-            pst.setString(2, password);
+            
+            //ส่วนประกาศตัวแปร
+            String HN = this.HN.getText();
+            String id_num = tfpassword.getText();
+            String p_pre_name = tfusername.getText();
+            String p_fname = tfpassword.getText();
+            String p_lname = tfusername.getText();
+            String birth_date = tfpassword.getText();
+            String job = tfusername.getText();
+            String address = tfpassword.getText();
+            String code = tfpassword.getText();
+            String address = tfpassword.getText();
+            String p_tel = tfpassword.getText();
+            String p_nation = tfpassword.getText();
+            String p_religion = tfpassword.getText();
+            String p_gender = tfpassword.getText();
+            String p_status = tfpassword.getText();
+            String r_fname = tfpassword.getText();
+            String r_lname = tfpassword.getText();
+            String r_tel = tfpassword.getText();
+            String r_status = tfpassword.getText();
+            String t_birth_date = tfpassword.getText();
+            String t_day = tfpassword.getText();
+            String t_month = tfpassword.getText();
+            String t_year = tfpassword.getText();
+            String main_element = tfpassword.getText();
+            String sub_element = tfpassword.getText();
+            String weak_health = tfpassword.getText();
+            String med_allergic = tfpassword.getText();
+            String food_allergic = tfpassword.getText();
+            String hist_ill = tfpassword.getText();
+            String hist_illF = tfpassword.getText();
+            String hist_live = tfpassword.getText();
+            String hist_period = tfpassword.getText();            
+
+            //ส่วนส่งข้อมูล
+            pst.setString(1, HN);
+            pst.setString(2, id_num);
+            pst.setString(3, p_pre_name);
+            pst.setString(4, p_fname);
+            pst.setString(5, p_lname);
+            pst.setString(6, birth_date);
+            pst.setString(7, job);
+            pst.setString(8, address);
+            pst.setString(9, code);
+            pst.setString(10, p_tel);
+            pst.setString(11, p_nation);
+            pst.setString(12, p_religion);
+            pst.setString(13, p_gender);
+            pst.setString(14, p_status);
+            pst.setString(15, r_fname);
+            pst.setString(16, r_lname);
+            pst.setString(17, r_tel);
+            pst.setString(18, r_status);
+            pst.setString(19, t_birth_date);
+            pst.setString(20, t_day);
+            pst.setString(21, t_month);
+            pst.setString(22, t_year);
+            pst.setString(23, main_element);
+            pst.setString(24, sub_element);
+            pst.setString(25, weak_health);
+            pst.setString(26, med_allergic);
+            pst.setString(27, food_allergic);
+            pst.setString(28, hist_ill);
+            pst.setString(29, hist_illF);
+            pst.setString(30, hist_live);
+            pst.setString(31, hist_period);
+            
+                
             ResultSet rs1 = pst.executeQuery();
             if(rs1.next()==false)
                 {
@@ -1358,7 +1415,7 @@ public class inputMain extends javax.swing.JFrame {
     }
     
     public char getfirstChar(){
-        String a = jTextField2.getText();
+        String a = p_lname.getText();
         char c;
 //        System.out.print(a);
         return c = a.charAt(0);
@@ -1367,7 +1424,7 @@ public class inputMain extends javax.swing.JFrame {
     public void updateValue(){
         String firstlet = text+"0001";
         System.out.print(firstlet);
-        kuy.setText(firstlet);
+        HN.setText(firstlet);
     }
 
     
@@ -1380,7 +1437,7 @@ public class inputMain extends javax.swing.JFrame {
         String[] arr2 = {"พุทธ","คริสต์","อิสลาม","พราหมณ์ฮินดู","อื่นๆ"};
         String[] arr3 = {"ธาตุไฟ","ธาตุลม","ธาตุน้ำ","ธาตุดิน"};
         for(int i=0;i<arr.length;i++){
-            jComboBox1.addItem(arr[i]);
+            p_pre_name.addItem(arr[i]);
         }
         for(int i = 0 ;i<arr2.length;i++){
             p_religion.addItem(arr2[i]);
@@ -1397,6 +1454,7 @@ public class inputMain extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel HN;
     private javax.swing.JPanel Jtabbed1;
     private javax.swing.JPanel Jtabbed2;
     private javax.swing.JPanel Jtabbed3;
@@ -1408,6 +1466,7 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPanel buttonPanel;
+    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JTextField id_num;
     private javax.swing.JButton jButton1;
@@ -1415,15 +1474,12 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JFormattedTextField jFormattedTextField5;
     private javax.swing.JFormattedTextField jFormattedTextField6;
     private javax.swing.JFormattedTextField jFormattedTextField7;
@@ -1505,7 +1561,6 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
@@ -1519,14 +1574,16 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField job;
-    public javax.swing.JLabel kuy;
     private javax.swing.JRadioButton p_gender;
+    private javax.swing.JTextField p_lname;
     private javax.swing.JTextField p_nation;
+    private javax.swing.JComboBox<String> p_pre_name;
     private javax.swing.JComboBox<String> p_religion;
     private javax.swing.JFormattedTextField p_tel;
     private javax.swing.JComboBox<String> t_birth_date;
+    private javax.swing.JComboBox<String> t_day1;
+    private javax.swing.JTextField t_day2;
     // End of variables declaration//GEN-END:variables
 }
