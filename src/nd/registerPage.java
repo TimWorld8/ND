@@ -197,8 +197,15 @@ try {
     String pre_name = pre_name_txt.getText();
     String fname = fname_txt.getText();
     String lname = lname_txt.getText();
-    String tel = tel_txt.getSelectedItem().toString;
-    String gender = gender_txt.getText();
+    String tel = tel_txt.getText();
+    String gender = gender_txt.getSelectedItem().toString();
+    int gender_num =0;
+    if(gender =="ชาย"){
+        gender_num = 1;
+    }
+    else{
+         gender_num = 2;
+    }
     String role = role_txt.getText();
     String password = password_txt.getText();
       
@@ -207,7 +214,7 @@ try {
     pst.setString(3, fname);
     pst.setString(4, lname);
     pst.setString(5, tel);
-    pst.setString(6, gender);
+    pst.setString(6, gender_num);
     pst.setString(7, role);
     pst.setString(8, password);
     
@@ -220,7 +227,7 @@ try {
         lname_txt.setText("");
         tel_txt.setText("");
         
-        if(gender_txt=="ชาย")
+        if(gender=="ชาย")
             
         role_txt.setText("");
         password_txt.setText("");
