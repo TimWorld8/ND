@@ -10,14 +10,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import static nd.ND.connectDB;
 
 /**
  *
  * @author timworld
  */
 public class registerPage extends javax.swing.JFrame {
-
+    public static Main m = new Main();
     /**
      * Creates new form registerPage
      */
@@ -58,27 +57,43 @@ public class registerPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("สมัครเข้าใช้งาน");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("ชื่อผู้ใช้");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("คำนำหน้าชื่อ");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("ชื่อจริง");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("นามสกุล");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("เบอร์ติดต่อ");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("เพศ");
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("ตำแหน่ง");
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("รหัสผ่าน");
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("ยืนยันรหัสผ่าน");
 
+        password_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_txtActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("สมัครใช้งาน");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +101,7 @@ public class registerPage extends javax.swing.JFrame {
             }
         });
 
+        gender_txt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         gender_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ชาย", "หญิง" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -123,7 +139,7 @@ public class registerPage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(jLabel1)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,10 +202,11 @@ public class registerPage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Connection con = connectDB();
+Connection con = m.connectDB();
 PreparedStatement pst;
 try {
     pst = con.prepareStatement("INSERT INTO staff VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -214,7 +231,7 @@ try {
     pst.setString(3, fname);
     pst.setString(4, lname);
     pst.setString(5, tel);
-    pst.setString(6, gender_num);
+    pst.setInt(6, gender_num);
     pst.setString(7, role);
     pst.setString(8, password);
     
@@ -232,7 +249,7 @@ try {
         role_txt.setText("");
         password_txt.setText("");
     } else {
-        new Employee_menu().setVisible(true);
+        new Employee_login().setVisible(true);
         setVisible(false);
     }
 
@@ -240,6 +257,10 @@ try {
     Logger.getLogger(Employee_login.class.getName()).log(Level.SEVERE, null, ex);
 }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void password_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password_txtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,6 +287,7 @@ try {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(registerPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -5,7 +5,6 @@
  */
 package nd;
 //Gui part
-import database_test.Menu;
 import java.text.AttributedCharacterIterator;
 import static java.time.zone.ZoneRulesProvider.refresh;
 import javax.swing.Timer;
@@ -15,7 +14,6 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import static nd.ND.connectDB;
 
 /**
  *
@@ -32,7 +30,6 @@ public class inputMain extends javax.swing.JFrame {
     public inputMain() {
         initComponents();
         setCombo();
-        
     }
 
     /**
@@ -58,7 +55,6 @@ public class inputMain extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         HN = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        date = new com.toedter.calendar.JDateChooser();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Jtabbed1 = new javax.swing.JPanel();
         Part1 = new javax.swing.JPanel();
@@ -90,7 +86,6 @@ public class inputMain extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
-        birth_date = new com.toedter.calendar.JDateChooser();
         Part2 = new javax.swing.JPanel();
         jTextField38 = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
@@ -263,9 +258,7 @@ public class inputMain extends javax.swing.JFrame {
                         .addComponent(p_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel32)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -279,9 +272,7 @@ public class inputMain extends javax.swing.JFrame {
                             .addComponent(HN, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(20, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))))
+                        .addComponent(jLabel32)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -419,9 +410,7 @@ public class inputMain extends javax.swing.JFrame {
                         .addComponent(id_num)
                         .addGap(5, 5, 5)
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(birth_date, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(264, 264, 264)
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(job)
@@ -472,15 +461,13 @@ public class inputMain extends javax.swing.JFrame {
         Part1Layout.setVerticalGroup(
             Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Part1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(birth_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(id_num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel33)
-                        .addComponent(job, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(id_num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel33)
+                    .addComponent(job, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Part1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -755,7 +742,7 @@ public class inputMain extends javax.swing.JFrame {
         );
 
         Jtabbed1.add(Part3);
-        Part3.setBounds(0, 250, 1260, 103);
+        Part3.setBounds(0, 250, 1260, 0);
 
         jTextField26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -843,7 +830,7 @@ public class inputMain extends javax.swing.JFrame {
         );
 
         Jtabbed1.add(Part4);
-        Part4.setBounds(0, 340, 1260, 100);
+        Part4.setBounds(0, 340, 1260, 0);
 
         jTabbedPane1.addTab("ข้อมูลทั่วไป", Jtabbed1);
 
@@ -1403,6 +1390,10 @@ public class inputMain extends javax.swing.JFrame {
         
         //</editor-fold>
         
+        //</editor-fold>
+        
+        //</editor-fold>
+        
         /* Create and display the form */
         
         
@@ -1462,11 +1453,9 @@ public class inputMain extends javax.swing.JFrame {
     private javax.swing.JPanel Part2;
     private javax.swing.JPanel Part3;
     private javax.swing.JPanel Part4;
-    private com.toedter.calendar.JDateChooser birth_date;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPanel buttonPanel;
-    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JTextField id_num;
     private javax.swing.JButton jButton1;
