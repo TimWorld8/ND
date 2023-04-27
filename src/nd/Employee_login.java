@@ -207,7 +207,7 @@ public class Employee_login extends javax.swing.JFrame {
                 }
             else
                 {
-                     new Employee_menu().setVisible(true);
+                     new Menu().setVisible(true);
                      setVisible(false);
                 }
             
@@ -221,7 +221,7 @@ new Reset_password().setVisible(true);
     }//GEN-LAST:event_lbresetpwMouseClicked
 
     private void lbregisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbregisterMouseClicked
-        
+new registerPage().setVisible(true);        
     }//GEN-LAST:event_lbregisterMouseClicked
 
     /**
